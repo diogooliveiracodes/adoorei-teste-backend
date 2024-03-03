@@ -22,7 +22,7 @@ class ApiBaseController extends Controller
             'client_ip' => request()->ip(),
         ]);
 
-        return response()->json([
+        return response([
             'message' => 'An error occurred. Please try again later.'
         ], 500);
     }

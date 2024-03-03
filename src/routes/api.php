@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::apiResource('products', 'App\Http\Controllers\ProductController', ['only' => ['index', 'show', 'update']]);
+Route::apiResource('orders', 'App\Http\Controllers\OrderController');
