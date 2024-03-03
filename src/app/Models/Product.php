@@ -28,4 +28,9 @@ class Product extends Model
         return $this->where('is_active', true)->get();
     }
 
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'order_products')
+            ->withPivot('quantity');
+    }
 }
