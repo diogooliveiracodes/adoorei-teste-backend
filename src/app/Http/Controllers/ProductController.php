@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\UpdateProductRequest;
+use App\Models\Log;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -10,10 +11,13 @@ use Illuminate\Http\Response;
 class ProductController extends ApiBaseController
 {
     protected $product;
+    public $log;
 
-    public function __construct(Product $product)
+    public function __construct(Product $product, Log $log)
     {
         $this->product = $product;
+        $this->log = $log;
+        parent::__construct($this->log);
     }
 
     /**
